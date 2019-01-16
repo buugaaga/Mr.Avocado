@@ -6,14 +6,7 @@ from .models import Category, Product
 
 
 def pages_num(request):
-
-
-
-
     return render(request, 'shop/product/list.html', context=context)
-
-
-
 
 
 # page with products

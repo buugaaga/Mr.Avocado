@@ -5,19 +5,32 @@
     {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>{% block title %}{% endblock %}</title>
     <!-- Styles -->
     <link rel="stylesheet" href="{% static "css/style.css" %}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
 
-
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <a href="#"><img src="/media/avocado.jpg" alt=""></a>
+            </div>
+            <div class="col">
+                Наш товар высокого качества и только от лучших производителей
+            </div>
+            <div class="col">
+                +7 965 509 61 63
+                - г.Новоуральск
+            </div>
+            <div class="col">
+                <button>Заказать звонок</button>
+            </div>
+        </div>
+    </div>
 
     <section id="header">
-        <div class="top container">
-            Мой Онлайн-Магазин
-        </div>
         <div class="top-bl">
             <div class="container">
                 <div class="cart">Ваша корзина пуста</div>
