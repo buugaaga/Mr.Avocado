@@ -1,0 +1,19 @@
+
+
+.top {
+    padding: 20px 0;
+    font-size: 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.top-bl {
+    background: #777777;
+    padding: 30px;
+}
+
+.top-bl .cart {
+  float: right;
+  font-size: 17px;
+}
+
