@@ -1,0 +1,56 @@
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+    <a class="navbar-brand" href="/">Django</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+                {% with totail_items=cart|length %}
+                {% if cart|length > 0 %}
+                <a class="nav-link" href="#">
+                    Корзина <span class="badge badge-secondary">{{ totail_items }}</span>
+                </a>
+                {% else %}
+                <a class="nav-link" href="#">
+                    Корзина пуста
+                </a>
+                {% endif %}
+                {% endwith %}
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <a href="#"><img src="/media/avocado.jpg" alt=""></a>
+        </div>
+        <div class="col">
+            Наш товар высокого качества и только от лучших производителей
+        </div>
+        <div class="col">
+            +7 965 509 61 63
+            - г.Новоуральск
+        </div>
+        <div class="col">
+            <button>Заказать звонок</button>
+        </div>
+    </div>
+</div>
+
+<section id="header">
+    <div class="top-bl">
+        <div class="container">
+            <div class="cart">Ваша корзина пуста</div>
+        </div>
+    </div>
+</section>
+<section id="content row" class="container">
