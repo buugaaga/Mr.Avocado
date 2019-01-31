@@ -9,18 +9,21 @@
 {% endblock %}
 
 {% block content %}
-    <div id="sidebar" class="col-sm-3">
+    <div class="container">
         <h3>Категории</h3>
-        <ul>
-            <li {% if not category %} class="selected" {% endif %}>
-                <a href="{% url 'ProductList' %}">Все</a>
-            </li>
-            {% for cat in category %}
-                <li {% if category.slug == cat.slug %} class="selected" {% endif %}>
-                    <a href="{{ cat.get_absolute_url }}">{{ cat.name }}</a>
+        <div class="row">
+
+            <ul>
+                <li {% if not category %} class="selected" {% endif %}>
+                    <a href="{% url 'ProductList' %}">Все</a>
                 </li>
-            {% endfor %}
-        </ul>
+                {% for cat in category %}
+                    <li {% if category.slug == cat.slug %} class="selected" {% endif %}>
+                        <a href="{{ cat.get_absolute_url }}">{{ cat.name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
     <div id="main" class="product_list col-sm-9">
         <h1>
