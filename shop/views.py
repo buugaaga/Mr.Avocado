@@ -14,7 +14,7 @@ def ProductList(request, category_slug=None):
 
 #нумерация страниц
     products_all = Product.objects.all()
-    paginator = Paginator(products_all, 3)
+    paginator = Paginator(products_all, 9)
 
     page_number = request.GET.get('page', 1)
     page = paginator.get_page(page_number)

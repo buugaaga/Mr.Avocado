@@ -9,67 +9,73 @@
 {% endblock %}
 
 {% block content %}
-    <div id="sidebar" class="col-sm-3">
-        <h3>Категории</h3>
-        <ul>
-            <li {% if not category %} class="selected" {% endif %}>
-                <a href="{% url 'ProductList' %}">Все</a>
-            </li>
-            {% for cat in category %}
-                <li {% if category.slug == cat.slug %} class="selected" {% endif %}>
-                    <a href="{{ cat.get_absolute_url }}">{{ cat.name }}</a>
-                </li>
-            {% endfor %}
-        </ul>
-    </div>
-    <div id="main" class="product_list col-sm-9">
-        <h1>
-            {% if category %}
-                {{ category.name }}
-            {% else %}
-                Товары
-            {% endif %}
-        </h1>
-        <div id="items-row">
-            {% for product in products %}
-                <div class="item col-sm-4">
-                    <a href="{{ product.get_absolute_url }}">
-                        <img src="{% if product.image %} {{ product.image.url }} {% else %} {% static 'img/no-image.jpg'%} {% endif %}" class="img-responsive">
-                    </a>
-                    <a href="{{ product.get_absolute_url }}">{{ product.name }}</a><br>
-          {{ product.price }} руб.
+    <div class="container">
+        <!-- <div class="row">
+            <div id="sidebar" class="col-sm-3">
+                <h3>Категории</h3>
+                <ul>
+                    <li {% if not category %} class="selected" {% endif %}>
+                        <a href="{% url 'ProductList' %}">Все</a>
+                    </li>
+                    {% for cat in category %}
+                        <li {% if category.slug == cat.slug %} class="selected" {% endif %}>
+                            <a href="{{ cat.get_absolute_url }}">{{ cat.name }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div> -->
+        <div class="row">
+            <div class="col-12">
+                <h3>
+                    {% if category %}
+                        {{ category.name }}
+                    {% else %}
+                        Товары
+                    {% endif %}
+                </h3>
+                <div class="row">
+                    {% for product in products %}
+                    <div class="col-6">
+                        <a href="{{ product.get_absolute_url }}">
+                            <img src="{% if product.image %} {{ product.image.url }} {% else %} {% static 'img/no-image.jpg'%} {% endif %}" class="img-responsive" width="100">
+                        </a>
+                        <a href="{{ product.get_absolute_url }}">{{ product.name }}</a><br>
+                        {{ product.price }} руб.
+                    </div>
+                    {% endfor %}
                 </div>
-            {% endfor %}
-        </div>
-    </div>
-    {% if is_paginated %}
-        <nav aria-label="Page navigation example">
-            <ul class="pagination">
-                <li class="page-item">
-                    <a class="page-link" href="{{ prev_url }}" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                </li>
-                {% for n in page_object.paginator.page_range %}
+            </div>
+            {% if is_paginated %}
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" href="{{ prev_url }}" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                    </li>
+                    {% for n in page_object.paginator.page_range %}
 
                     {% if page_object.number == n %}
-                        <li class="page-item active"><a class="page-link" href="?page={{ n }}">{{ n }}</a></li>
+                    <li class="page-item active"><a class="page-link" href="?page={{ n }}">{{ n }}</a></li>
                     {% elif n > page_object.number|add:-3 and n < page_object.number|add:3 %}
 
-                        <li class="page-item">
-                            <a class="page-link" href="?page={{ n }}">{{ n }}</a>
-                    {% endif %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ n }}">{{ n }}</a>
+                        {% endif %}
 
-                {% endfor %}
-                <li class="page-item">
-                    <a class="page-link" href="{{ next_url }}" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    {% endif %}
-{% endblock %}</code>
-</pre>
+                        {% endfor %}
+                        <li class="page-item">
+                            <a class="page-link" href="{{ next_url }}" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
