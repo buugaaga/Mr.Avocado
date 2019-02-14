@@ -26,17 +26,17 @@
             </div>
         </div> -->
         <div class="row">
-            <div class="col-9">
-                <h1>
+            <div class="col-12">
+                <h3>
                     {% if category %}
                         {{ category.name }}
                     {% else %}
                         Товары
                     {% endif %}
-                </h1>
+                </h3>
                 <div class="row">
                     {% for product in products %}
-                    <div class="col-4">
+                    <div class="col-6">
                         <a href="{{ product.get_absolute_url }}">
                             <img src="{% if product.image %} {{ product.image.url }} {% else %} {% static 'img/no-image.jpg'%} {% endif %}" class="img-responsive" width="100">
                         </a>

@@ -1,17 +1,17 @@
-
-.top {
-    padding: 20px 0;
-    font-size: 25px;
-    font-weight: 600;
-    text-transform: uppercase;
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+/*edit for header and navbar*/
+.img-header {
+	width: 100%;
 }
-
-.top-bl {
-    background: #777777;
-    padding: 30px;
+.p-header {
+	font-family: 'Oswald', cursive;
+	font-weight: 500;
+	font-size: 17px;
+	position: relative;
+	left: -15px;
+	opacity: 0.8;
 }
-
-.top-bl .cart {
-  float: right;
-  font-size: 17px;
+/*edit for content. It is list of products*/
+.img-detail {
+	width: 250px ;
 }
