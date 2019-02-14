@@ -3,3 +3,5 @@ __pycache__
 secret_setting.py
 settings.py
 media
+.png
+.jpg
