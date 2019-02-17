@@ -9,9 +9,11 @@
     <div class="col-12">
         <img src="{% if product.image %}{{ product.image.url }}{% else %}{% endif %}" class="img-detail" >
     </div>
-    <div class="col-8">
+
+    <div class="col-12 col-md-8">
       <h3>{{ product.name }}</h3>
-      <h2><a href="{{ product.category.get_absolute_url }}">{{ product.category }}</a></h2>
+     <!--  <h2><a href="{{ product.category.get_absolute_url }}">{{ product.category }}</a></h2> -->
+
       <p class="price">
         {{ product.price }} руб.
       </p>

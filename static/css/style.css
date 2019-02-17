@@ -18,6 +18,31 @@
 
 
 
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400i')
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+/*edit for header and navbar*/
+
+body {
+	font-family: 'Montserrat', sans-serif; 
+}
+.img-header {
+	width: 70px;
+}
+.p-header {
+	font-family: 'Oswald', cursive;
+	font-weight: 500;
+	font-size: 17px;
+	position: relative;
+	left: -15px;
+	opacity: 0.8;
+}
+/*edit for content. It is list of products*/
+.img-detail {
+	width: 250px ;
+}
+.footer {
+	margin-top: 50px;
+}
 
 .top {
     padding: 20px 0;
