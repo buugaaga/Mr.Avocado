@@ -36,20 +36,23 @@ def ProductList(request, category_slug=None):
     categories = Category.objects.all()
     #products_all = Product.objects.all()
     products = Product.objects.filter(available=True)
+
+    
+
+    
     if category_slug:
         category = get_object_or_404(Category, slug=category_slug)
         products = products.filter(category=category)
 
     context = {
-        'page_object': page,
-        'is_paginated': is_paginated,
-        'prev_url': prev_url,
-        'next_url': next_url,
-        'category': category,
-        'categories': categories,
-        'products': page
+            'page_object': page,
+            'is_paginated': is_paginated,
+            'prev_url': prev_url,
+            'next_url': next_url,
+            'category': category,
+            'categories': categories,
+            'products': products,
     }
-
 
     return render(request, 'shop/product/list.html/', context=context)
 
