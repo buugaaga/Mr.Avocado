@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container">
+    <div class="container content">
         <!-- <div class="row">
             <div id="sidebar" class="col-sm-3">
                 <h3>Категории</h3>
@@ -40,7 +40,7 @@
                         <a href="{{ product.get_absolute_url }}">
                             <img src="{% if product.image %} {{ product.image.url }} {% else %} {% static 'img/no-image.jpg'%} {% endif %}" class="img-responsive" width="100">
                         </a>
-                        <a href="{{ product.get_absolute_url }}">{{ product.name }}</a><br>
+                        <a class="product-name" href="{{ product.get_absolute_url }}">{{ product.name }}</a><br>
                         {{ product.price }} руб.
                     </div>
                     {% endfor %}
