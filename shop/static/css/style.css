@@ -6,14 +6,8 @@
 body {
 	font-family: 'Montserrat', sans-serif; 
 }
-.navbar {
-	background-color: silver;
-}
-.navbar-brand {
-	color: #ffffff;
-}
-/*.img-header {
-	width: 70px;*/
+.img-header {
+	width: 70px;
 }
 .p-header {
 	font-family: 'Oswald', cursive;
@@ -23,16 +17,12 @@ body {
 	left: -15px;
 	opacity: 0.8;
 }
-
 /*edit for content. It is list of products*/
-.content {
-	margin-top: 20px;
-}
 .img-detail {
 	width: 250px ;
 }
-.product-name {
-	color: grey;
+.content {
+	margin-top: 30px;
 }
 .footer {
 	margin-top: 50px;
