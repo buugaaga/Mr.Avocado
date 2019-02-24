@@ -21,6 +21,9 @@ body {
 .img-detail {
 	width: 250px ;
 }
+.content {
+	margin-top: 30px;
+}
 .footer {
 	margin-top: 50px;
 }
