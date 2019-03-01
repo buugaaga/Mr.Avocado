@@ -59,5 +59,10 @@ def ProductList(request, category_slug=None):
 
 #products page
 def ProductDetail(request, id, slug):
+    categories = Category.objects.all()
     product = get_object_or_404(Product, id=id, slug=slug, available=True)
-    return render(request, 'shop/product/detail.html/', {'product': product})
+    return render(request, 'shop/product/detail.html/', 
+        {
+        'product': product,
+        'categories': categories
+        })
