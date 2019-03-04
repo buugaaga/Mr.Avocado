@@ -22,13 +22,13 @@ def CartRemove(request, product_id):
 	cart = Cart(request)
 	product = get_object_or_404(Product, id=product_id)
 	cart.remove(product)
-	return redirect('cart:CartDetail')
+	return redirect('CartDetail')
 
 def CartDetail(request):
 	cart = Cart(request)
 	categories = Category.objects.all()
-	product = get_object_or_404(Product, id=id)
-	return render(request, 'cart/detail.html', {'cart': cart, 'categories': categories, 'product': product})
+	
+	return render(request, 'cart/detail.html', {'cart': cart, 'categories': categories})
 
 	
 

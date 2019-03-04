@@ -30,7 +30,7 @@
             </td>
             <td>{{ product.name }}</td>
             <td>{{ item.quantity }}</td>
-            <td><a href="{% url "cart:CartRemove" product.id %}">Удалить</a></td>
+            <td><a href="{% url 'CartRemove'	 product.id %}">Удалить</a></td>
             <td class="num">{{ item.price }} руб.</td>
             <td class="num">{{ item.total_price }} руб.</td>
           </tr>
