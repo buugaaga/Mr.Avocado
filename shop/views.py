@@ -3,6 +3,7 @@ from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator
 
 from .models import Category, Product
+from cart.forms import CartAddProductForm
 
 
 def pages_num(request):
@@ -36,8 +37,11 @@ def ProductList(request, category_slug=None):
 def ProductDetail(request, id, slug):
     categories = Category.objects.all()
     product = get_object_or_404(Product, id=id, slug=slug, available=True)
+    cart_product_form = CartAddProductForm()
     return render(request, 'shop/product/detail.html/', 
         {
         'product': product,
-        'categories': categories
+        'categories': categories,
+        'cart_product_form': cart_product_form,
         })
+
