@@ -44,4 +44,3 @@ def ProductDetail(request, id, slug):
         'categories': categories,
         'cart_product_form': cart_product_form,
         })
-
