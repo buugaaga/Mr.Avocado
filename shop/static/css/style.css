@@ -30,3 +30,14 @@ h1 {
 .footer {
 	margin-top: 50px;
 }
+/*Стили для корзины cart/detail.html */
+.text-right {
+	margin-right: 20px;
+	padding: 20px;
+	white-space: 20px;
+}
+.text-right a {
+	margin-top: 10px;
+ 	margin-right: 20px;
+}
+

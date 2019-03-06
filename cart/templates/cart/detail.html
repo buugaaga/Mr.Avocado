@@ -6,10 +6,10 @@
 
 {% block content %}
 
-<div class="content">
+<div class="container content">
   <h1>Ваша корзина товаров</h1>
-  <table>
-  	<thead>
+  <table class="table table-bordered table-md-responsive">
+  	<thead >
       <tr>
         <th>Изображение</th>
         <th>Продукт</th>
@@ -25,12 +25,12 @@
           <tr>
             <td>
               <a href="{{ product.get_absolute_url }}">
-                <img src="{{ product.image.url }}" alt="" />
+                <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no-img.jpg' %}{% endif %}" alt="" />
               </a>
-            </td>
+            </td> 
             <td>{{ product.name }}</td>
             <td>{{ item.quantity }}</td>
-            <td><a href="{% url 'CartRemove'	 product.id %}">Удалить</a></td>
+            <td><a href="{% url 'CartRemove' product.id %}">Удалить</a></td>
             <td class="num">{{ item.price }} руб.</td>
             <td class="num">{{ item.total_price }} руб.</td>
           </tr>
@@ -45,8 +45,8 @@
   </table>
 
   <p class="text-right">
-    <a href="{% url 'ProductList' %}" class="btn">Продолжить Шопинг</a>
-    <a href="#">Оформить заказ</a>
+    <a href="{% url 'ProductList' %}" class="btn btn-outline-secondary">Продолжить Шопинг</a>
+    <a href="#" class="btn btn-success">Оформить заказ</a>
   </p>
 
 

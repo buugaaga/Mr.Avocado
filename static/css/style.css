@@ -1,22 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Oswald');
-/*edit for header and navbar*/
-.img-header {
-	width: 100%;
-}
-.p-header {
-	font-family: 'Oswald', cursive;
-	font-weight: 500;
-	font-size: 17px;
-	position: relative;
-	left: -15px;
-	opacity: 0.8;
-}
-/*edit for content. It is list of products*/
-.img-detail {
-	width: 250px ;
-}
-
-
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400i')
 @import url('https://fonts.googleapis.com/css?family=Oswald');
@@ -48,5 +29,15 @@ h1 {
 }
 .footer {
 	margin-top: 50px;
+}
+/*Стили для корзины cart/detail.html */
+.text-right {
+	margin-right: 20px;
+	padding: 20px;
+	white-space: 20px;
+}
+.text-right a {
+	margin-top: 10px;
+ 	margin-right: 20px;
 }
 

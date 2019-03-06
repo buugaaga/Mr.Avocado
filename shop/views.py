@@ -8,7 +8,7 @@ from cart.forms import CartAddProductForm
 
 def pages_num(request):
     return render(request, 'shop/product/list.html', context=context)
-
+ 
 
 # page with products
 def ProductList(request, category_slug=None):
