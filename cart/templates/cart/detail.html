@@ -3,7 +3,7 @@
 {% block title %}
   Ваша корзина
 {% endblock %}
-
+ 
 {% block content %}
 
 <div class="container content">
@@ -25,11 +25,18 @@
           <tr>
             <td>
               <a href="{{ product.get_absolute_url }}">
-                <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no-img.jpg' %}{% endif %}" alt="" />
+                <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no-img.jpg' %}{% endif %}" alt="" class="img-small" >
               </a>
             </td> 
             <td>{{ product.name }}</td>
-            <td>{{ item.quantity }}</td>
+            <td>
+              <form action="{% url 'CartAdd' product.id %}" method="post" >
+                {{ item.update_quantity_form.quantity }}
+                {{ item.update_quantity_form.update }}
+                {% csrf_token %}
+                <input type="submit" value="Обновить">
+              </form>
+            </td>
             <td><a href="{% url 'CartRemove' product.id %}">Удалить</a></td>
             <td class="num">{{ item.price }} руб.</td>
             <td class="num">{{ item.total_price }} руб.</td>
@@ -43,7 +50,7 @@
         </tr>
     </tbody>
   </table>
-
+ 
   <p class="text-right">
     <a href="{% url 'ProductList' %}" class="btn btn-outline-secondary">Продолжить Шопинг</a>
     <a href="#" class="btn btn-success">Оформить заказ</a>

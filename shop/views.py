@@ -4,7 +4,7 @@ from django.core.paginator import Paginator
 
 from .models import Category, Product
 from cart.forms import CartAddProductForm
-
+from cart.cart import Cart
 
 def pages_num(request):
     return render(request, 'shop/product/list.html', context=context)
@@ -13,23 +13,23 @@ def pages_num(request):
 # page with products
 def ProductList(request, category_slug=None):
 
-    products_all = Product.objects.all()
+    
     #создание списка
     category = None
     categories = Category.objects.all()
     #products_all = Product.objects.all()
-    products = Product.objects.filter(available=True)
+    products_all = Product.objects.filter(available=True)
 
     if category_slug:
         category = get_object_or_404(Category, slug=category_slug)
-        products = products.filter(category=category)
+        products_all = products_all.filter(category=category)
 
     context = {
             'category': category,
             'categories': categories,
-            'products': products,
+            'products_all': products_all,
     }
-
+    
     return render(request, 'shop/product/list.html/', context=context)
 
 
