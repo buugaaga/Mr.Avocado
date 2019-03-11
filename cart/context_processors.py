@@ -1,5 +1,6 @@
 from .cart import Cart
 from .forms import CartAddProductForm
+from shop.models import Category
 
 
 def cart(request):
@@ -11,3 +12,7 @@ def cart(request):
 			'update': True
 			})
 	return({'cart': cart})
+
+def categories(request):
+	categories = Category.objects.all()
+	return {'categories': categories}

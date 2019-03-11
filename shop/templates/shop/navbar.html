@@ -9,8 +9,8 @@
   <div>
     {% with total_items=cart|length %}
         {% if cart|length > 0  %}
-            Ваша корзина:
-            <a href="{% url 'CartDetail' %}">
+            <a class="cart_in_navbar" href="{% url 'CartDetail' %}">
+              Ваша корзина: <br>
                 {{ total_items }} тов.  {{ cart.get_total_price }} руб.
             </a>
         {% else %}

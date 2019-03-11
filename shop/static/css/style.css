@@ -9,6 +9,10 @@ body {
 h1 {
 	font-size: 25px;
 }
+.cart_in_navbar {
+	color: #000;
+	text-decoration: none;
+}
 .img-header {
 	width: 70px;
 } 
