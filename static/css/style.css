@@ -9,9 +9,13 @@ body {
 h1 {
 	font-size: 25px;
 }
+.cart_in_navbar {
+	color: #000;
+	text-decoration: none;
+}
 .img-header {
 	width: 70px;
-}
+} 
 .p-header {
 	font-family: 'Oswald', cursive;
 	font-weight: 500;
@@ -20,7 +24,10 @@ h1 {
 	left: -15px;
 	opacity: 0.8;
 }
-/*edit for content. It is list of products*/
+/*edit for content. It is list of products and detail*/
+.img-small {
+	width: 100px;
+}
 .img-detail {
 	width: 250px ;
 }
