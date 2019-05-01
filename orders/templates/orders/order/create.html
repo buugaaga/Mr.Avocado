@@ -5,26 +5,35 @@
 {% endblock %}
 
 {% block content %}
-    <h1>Оформление заказа</h1>
-    <div class="col-sm-4 content">
-        <h2>Заполните форму</h2>
-        <form action="." class="order-form" method="post">
-            {{ form.as_p }}
-            {% csrf_token %}
-            <input type="submit" value="Отправить">
-        </form>
-    </div>
+<div class="container">
+    <div class="row justify-content-start  content">
+        <div class="col-sm-12 mb-5">
+            <h1>Оформление заказа</h1>
+        </div>
+        <div class="col-sm-5  mb-4">
+            <h2>Заполните форму</h2>
+        </div>
+        <div class="col-sm-8 d-flex  bd-highlight mb-3">
+            <form  action="." class="order-form" method="post">
+                {{ form.as_p }}
+                {% csrf_token %}
+                <input type="submit" value="Отправить">
+            </form>
+        </div>
 
-    <div class="order-info col-sm-8">
-        <h2>Ваш заказ</h2>
-        <ul>
-            {% for item in cart %}
-                <li>
-                    {{ item.product.name }} | Количество: {{ item.quantity }} | Цена: {{ item.total_price }}
-                </li>
-            {% endfor %}
-        </ul>
+        <div class="order-info col-sm-8">
+            <h2>Ваш заказ</h2>
+            <ul>
+                {% for item in cart %}
+                    <li>
+                        {{ item.product.name }} | Количество: {{ item.quantity }} | Цена: {{ item.total_price }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+
     </div>
+</div>
 {% endblock %}
 
 

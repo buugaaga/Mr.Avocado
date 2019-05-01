@@ -64,7 +64,7 @@ class Cart(object):
 
 	# Очистка сессии
 	def clear(self):
-		del self.session[CART_SESSION_ID]
+		del self.session[settings.CART_SESSION_ID]
 		self.session.modified = True
 
 	
